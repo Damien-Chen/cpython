@@ -81,7 +81,8 @@ jobs:
           make regen-stdlib-module-names regen-sbom
       - name: Check for changes
         run: |
-          make -j4 regen-all
+          make regen-all
+          .\PCbuild\build.bat
           git add -u
           changes=$(git status --porcelain)
           # Check for changes in regenerated files
