@@ -86,7 +86,7 @@ jobs:
             [[ -z "$command" || "$command" == \#* ]] && continue
             echo "Running: $command"
             eval "$command"
-          done < commands.txt
+          done < test.txt
       - name: Check for changes
         run: |
           git add -u
