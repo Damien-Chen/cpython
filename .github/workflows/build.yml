@@ -79,9 +79,16 @@ jobs:
         run: |
           make -j4 regen-all
           make regen-stdlib-module-names regen-sbom
+      - name: Run commands from file
+        run: |
+          while IFS= read -r command; do
+            # Skip empty lines and lines starting with #
+            [[ -z "$command" || "$command" == \#* ]] && continue
+            echo "Running: $command"
+            eval "$command"
+          done < commands.txt
       - name: Check for changes
         run: |
-          make regen-all
           git add -u
           changes=$(git status --porcelain)
           # Check for changes in regenerated files
