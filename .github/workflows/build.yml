@@ -81,12 +81,7 @@ jobs:
           make regen-stdlib-module-names regen-sbom
       - name: Run commands from file
         run: |
-          while IFS= read -r command; do
-            # Skip empty lines and lines starting with #
-            [[ -z "$command" || "$command" == \#* ]] && continue
-            echo "Running: $command"
-            eval "$command"
-          done < test.txt
+          sudo ./.github/workflows/test.sh
       - name: Check for changes
         run: |
           git add -u

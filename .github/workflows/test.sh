@@ -1,3 +1,5 @@
+#!/bin/bash
+
 python3.12 ./Tools/cases_generator/opcode_id_generator.py \
     -o ./Include/opcode_ids.h.new ./Python/bytecodes.c
 python3.12 ./Tools/cases_generator/target_generator.py \
