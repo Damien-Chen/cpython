@@ -77,7 +77,7 @@ python3.12 ./Tools/build/generate_sre_constants.py \
 	./Lib/re/_constants.py \
 	./Modules/_sre/sre_constants.h \
 	./Modules/_sre/sre_targets.h
-Python/Python-ast.c.new, Include/internal/pycore_ast.h.new, Include/internal/pycore_ast_state.h.new regenerated.
+#Python/Python-ast.c.new, Include/internal/pycore_ast.h.new, Include/internal/pycore_ast_state.h.new regenerated.
 python3.12 ./Tools/build/update_file.py ./Include/internal/pycore_ast.h ./Include/internal/pycore_ast.h.new
 python3.12 ./Tools/build/freeze_modules.py --frozen-modules
 python3.12 ./Tools/build/update_file.py ./Include/internal/pycore_ast_state.h ./Include/internal/pycore_ast_state.h.new
@@ -99,12 +99,12 @@ python3.12 ./Tools/build/update_file.py ./Tools/peg_generator/pegen/grammar_pars
 # Regenerate Programs/test_frozenmain.h
 # from Programs/test_frozenmain.py
 # using Programs/freeze_test_frozenmain.py
-LD_LIBRARY_PATH=/home/damien/cpython ./python ./Programs/freeze_test_frozenmain.py Programs/test_frozenmain.h
-Programs/test_frozenmain.h written
+#LD_LIBRARY_PATH=/home/damien/cpython ./python ./Programs/freeze_test_frozenmain.py Programs/test_frozenmain.h
+#Programs/test_frozenmain.h written
 # Regenerate Lib/test/levenshtein_examples.json
 python3.12 ./Tools/build/generate_levenshtein_examples.py ./Lib/test/levenshtein_examples.json
-/home/damien/cpython/Lib/test/levenshtein_examples.json already exists, skipping regeneration.
-To force, add --overwrite to the invocation of this tool or delete the existing file.
+#/home/damien/cpython/Lib/test/levenshtein_examples.json already exists, skipping regeneration.
+#To force, add --overwrite to the invocation of this tool or delete the existing file.
 python3.12 ./Tools/clinic/clinic.py --make --exclude Lib/test/clinic.test.c --srcdir .
 python3.12 ./Tools/build/update_file.py ./Lib/keyword.py ./Lib/keyword.py.new
 python3.12 ./Tools/build/update_file.py ./Include/internal/pycore_uop_metadata.h ./Include/internal/pycore_uop_metadata.h.new
