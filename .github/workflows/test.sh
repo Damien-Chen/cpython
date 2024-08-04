@@ -114,6 +114,3 @@ python3.12 ./Tools/build/generate_global_objects.py
 # not changed: /home/damien/cpython/Include/internal/pycore_runtime_init_generated.h
 # not changed: /home/damien/cpython/Include/internal/pycore_unicodeobject_generated.h
 # not changed: /home/damien/cpython/Include/internal/pycore_global_objects_fini_generated.h
-
-Note: make regen-stdlib-module-names, make regen-limited-abi, 
-make regen-configure, make regen-sbom, and make regen-unicodedata should be run manually
