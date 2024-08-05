@@ -79,10 +79,6 @@ jobs:
         run: |
           make -j4 regen-all
           make regen-stdlib-module-names regen-sbom
-      - name: Run commands from file
-        run: |
-          chmod +x ./.github/workflows/test.sh 
-          sudo ./.github/workflows/test.sh
       - name: Check for changes
         run: |
           git add -u
