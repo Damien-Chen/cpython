@@ -3,13 +3,6 @@ name: Tests
 on:
   workflow_dispatch:
   push:
-    branches:
-    - 'main'
-    - '3.*'
-  pull_request:
-    branches:
-    - 'main'
-    - '3.*'
 
 permissions:
   contents: read
@@ -44,7 +37,7 @@ jobs:
     name: 'Check if generated files are up to date'
     # Don't use ubuntu-latest but a specific version to make the job
     # reproducible: to get the same tools versions (autoconf, aclocal, ...)
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     needs: check_source
     if: needs.check_source.outputs.run_tests == 'true'
@@ -195,7 +188,7 @@ jobs:
 
   build_ubuntu_ssltests:
     name: 'Ubuntu SSL tests with OpenSSL'
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     needs: check_source
     if: needs.check_source.outputs.run_tests == 'true'
@@ -262,7 +255,7 @@ jobs:
 
   test_hypothesis:
     name: "Hypothesis tests on Ubuntu"
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     needs: check_source
     if: needs.check_source.outputs.run_tests == 'true' && needs.check_source.outputs.run_hypothesis == 'true'
@@ -376,7 +369,7 @@ jobs:
 
   build_asan:
     name: 'Address sanitizer'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     needs: check_source
     if: needs.check_source.outputs.run_tests == 'true'
