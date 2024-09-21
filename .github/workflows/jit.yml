@@ -1,22 +1,7 @@
 name: JIT
 on:
-  pull_request:
-    paths:
-      - '**jit**'
-      - 'Python/bytecodes.c'
-      - 'Python/optimizer*.c'
-      - '!Python/perf_jit_trampoline.c'
-      - '!**/*.md'
-      - '!**/*.ini'
-  push:
-    paths:
-      - '**jit**'
-      - 'Python/bytecodes.c'
-      - 'Python/optimizer*.c'
-      - '!Python/perf_jit_trampoline.c'
-      - '!**/*.md'
-      - '!**/*.ini'
   workflow_dispatch:
+  push:
 
 permissions:
   contents: read
@@ -61,7 +46,7 @@ jobs:
           - true
           - false
         llvm:
-          - 18
+          - 19
         include:
           - target: i686-pc-windows-msvc/msvc
             architecture: Win32
