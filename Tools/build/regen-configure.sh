@@ -5,8 +5,7 @@ set -e -x
 # The check_generated_files job of .github/workflows/build.yml must kept in
 # sync with this script. Use the same container image than the job so the job
 # doesn't need to run autoreconf in a container.
-IMAGE="ubuntu:24.04"
-DEPENDENCIES="autotools-dev autoconf autoconf-archive pkg-config"
+IMAGE="ghcr.io/python/autoconf:2024.10.06.11200919239"
 AUTORECONF="autoreconf -ivf -Werror"
 
 WORK_DIR="/src"
