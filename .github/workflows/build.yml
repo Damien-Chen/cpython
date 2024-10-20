@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - '*'
+      - '**'  # This triggers the workflow for any branch on push
   pull_request:
     branches:
-    - '*'
+      - '**'  # This triggers the workflow for any branch on pull requ
 
 permissions:
   contents: read
